@@ -33,7 +33,7 @@ model, cross_model, classifier = load_models()
 
 # --- UI Setup ---
 st.set_page_config(page_title="AI Paper Evaluator Pro", layout="wide")
-st.title("AI vs Human: Comparative Paper Evaluation")
+st.title("AI Paper Evaluation")
 
 # Tabs for Manual vs Automated Testing
 tab1, tab2 = st.tabs(["Individual Evaluation", "Automated Bulk Testing"])
@@ -196,8 +196,8 @@ with tab1:
 # 📥 TAB 2: AUTOMATED TESTING (ASAP 2.0)
 # ===============================
 with tab2:
-    st.header("ASAP 2.0 Batch Evaluator")
-    uploaded_test = st.file_uploader("Upload Kaggle Sample (CSV)", type="csv", key="kaggle_up")
+    st.header("Batch Evaluator")
+    uploaded_test = st.file_uploader("Upload CSV file", type="csv", key="kaggle_up")
     test_ref = st.text_area("Reference Answer for Batch Test", height=150, key="batch_ref")
     
     if st.button("Start Batch Evaluation") and uploaded_test and test_ref:
